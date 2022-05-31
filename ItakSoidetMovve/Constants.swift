@@ -27,7 +27,8 @@ struct Constants {
     struct NetWork {
         static let baseUrl = "https://api.themoviedb.org/3/"
         static let discoverMovies = "discover/movie"
+        static let discoverTV = "discover/tv"
         static var fullUrlMovies = "\(baseUrl)\(discoverMovies)?api_key=\(Constants.apiKey)&language=ru"
-            
+        static var fullUrlTV = "\(baseUrl)\(discoverTV)?api_key=\(Constants.apiKey)&language=ru"
     }
 }
