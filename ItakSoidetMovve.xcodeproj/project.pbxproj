@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9A6ECE52846244B00E3C535 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6ECE42846244B00E3C535 /* NetworkManager.swift */; };
+		C9A6ECE72846252C00E3C535 /* ResponseMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6ECE62846252C00E3C535 /* ResponseMovies.swift */; };
 		F0FB60B52844AD33008078E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB60B42844AD33008078E4 /* AppDelegate.swift */; };
 		F0FB60B72844AD33008078E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB60B62844AD33008078E4 /* SceneDelegate.swift */; };
 		F0FB60B92844AD33008078E4 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB60B82844AD33008078E4 /* CatalogViewController.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C9A6ECE42846244B00E3C535 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C9A6ECE62846252C00E3C535 /* ResponseMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseMovies.swift; sourceTree = "<group>"; };
 		F0FB60B12844AD33008078E4 /* ItakSoidetMovve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItakSoidetMovve.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FB60B42844AD33008078E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0FB60B62844AD33008078E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +60,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C9A6ECE328461D8500E3C535 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C9A6ECE42846244B00E3C535 /* NetworkManager.swift */,
+				C9A6ECE62846252C00E3C535 /* ResponseMovies.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
 		F0FB60A82844AD33008078E4 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +89,7 @@
 		F0FB60B32844AD33008078E4 /* ItakSoidetMovve */ = {
 			isa = PBXGroup;
 			children = (
+				C9A6ECE328461D8500E3C535 /* Network */,
 				F0FB60BD2844AD34008078E4 /* Assets.xcassets */,
 				F0FB60C22844AD34008078E4 /* Info.plist */,
 				FBCEA49D28451EF80075F7CE /* SupportingFiles */,
@@ -244,12 +258,14 @@
 			files = (
 				FBCEA4A2284520130075F7CE /* ActorsListTableViewCell.swift in Sources */,
 				F0FB60B92844AD33008078E4 /* CatalogViewController.swift in Sources */,
+				C9A6ECE52846244B00E3C535 /* NetworkManager.swift in Sources */,
 				FBCEA49228451E6D0075F7CE /* FilmsTableViewCell.swift in Sources */,
 				F0FB60B52844AD33008078E4 /* AppDelegate.swift in Sources */,
 				F0FB60B72844AD33008078E4 /* SceneDelegate.swift in Sources */,
 				FBCEA49B28451EAB0075F7CE /* Constants.swift in Sources */,
 				FBA4E85F2844FB6400E77C7B /* Model.swift in Sources */,
 				FBCEA49728451E970075F7CE /* SerialsTableViewCell.swift in Sources */,
+				C9A6ECE72846252C00E3C535 /* ResponseMovies.swift in Sources */,
 				FBCEA49F28451FB00075F7CE /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
