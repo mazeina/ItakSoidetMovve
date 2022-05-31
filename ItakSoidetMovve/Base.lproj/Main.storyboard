@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8rj-Hm-cZd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -12,6 +13,7 @@
         <!--Catalog View Controller-->
         <scene sceneID="NVK-B2-ddJ">
             <objects>
+
                 <viewController id="u7l-bu-bmx" customClass="CatalogViewController" customModule="ItakSoidetMovve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2lb-mH-RjQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -49,6 +51,7 @@
                         <segue destination="QMT-EV-Ldp" kind="show" identifier="detailSegue" id="n2h-aP-fje"/>
                     </connections>
                 </viewController>
+
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LdZ-aJ-OSg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1471.0144927536232" y="-321.42857142857139"/>
