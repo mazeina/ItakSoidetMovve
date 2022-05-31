@@ -24,7 +24,7 @@ extension CatalogViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
             ///example for filling collection
-            cell.testLabel.text = movies.first?.title
+
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.serialsCellID,
@@ -58,7 +58,7 @@ extension CatalogViewController: UITableViewDelegate {
         let indexPathRow = indexPath.row
         switch indexPathRow {
         case 0:
-            return 200
+            return 300
         case 1:
             return 150
         default:
@@ -72,14 +72,16 @@ extension CatalogViewController: UITableViewDelegate {
 class CatalogViewController: UIViewController {
  
     @IBOutlet var catalogTableView: UITableView!
-    
+
+    var movies: ResponseMovies? = nil
+
     let allCells = [
         FilmsTableViewCell(),
         SerialsTableViewCell(),
         ActorsListTableViewCell()
     ]
     
-    var movies: [MoviesModel] = []
+//    var movies: [MoviesModel] = []
     var tvShows: [TvShowModel] = []
     let networkManager = NetworkManager()
      
@@ -90,7 +92,7 @@ class CatalogViewController: UIViewController {
         catalogTableView.dataSource = self
         registerCells()
       
-        getMovies()
+//        getMovies()
         getTvShow()
     }
     
@@ -103,11 +105,11 @@ class CatalogViewController: UIViewController {
                                   forCellReuseIdentifier: Constants.actorsCellID)
     }
      
-    private func getMovies() {
-        networkManager.getDiscoverMovies { movies in
-            self.movies = [movies]
-        }
-    }
+//    private func getMovies() {
+//        networkManager.getDiscoverMovies { movies in
+//            self.movies = [movies]
+//        }
+//    }
     
     private func getTvShow() {
         networkManager.getDiscoverTV { tv in

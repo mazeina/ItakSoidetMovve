@@ -11,34 +11,35 @@ class NetworkManager {
     
 // MARK: - Movies
    
-    func getDiscoverMovies(completionHandler: @escaping (MoviesModel) -> Void) {
+    func getDiscoverMovies(completion: @escaping((ResponseMovies) -> ())) {
         if let url = URL(string: Constants.NetWork.fullUrlMovies) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
                 if error != nil {
                     print("error")
                     return
-                } 
+                }
+
                 if let safeData = data {
-                    if let movies = self.moviesParseJSON(withData: safeData) {
-                        completionHandler(movies)
+                    if let movie = self.parseJSON(safeData) {
+                        completion(movie)
                     }
                 }
             }
             task.resume()
         }
     }
-     
-    func moviesParseJSON(withData data: Data) -> MoviesModel? {
+
+
+    func parseJSON(_ data: Data) -> ResponseMovies? {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(ResponseMovies.self, from: data)
-            guard let movies = MoviesModel(movies: decodedData) else { return nil }
-            return movies
-        } catch let error as NSError {
-            print(error.localizedDescription)
+            return decodedData
+        } catch {
+            print("error")
+            return nil
         }
-        return nil
     }
 
 // MARK: - TV Shows

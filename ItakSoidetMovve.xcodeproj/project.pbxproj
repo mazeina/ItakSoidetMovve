@@ -11,6 +11,9 @@
 		84E755132846249C008FA395 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E755122846249C008FA395 /* UserViewController.swift */; };
 		84E75515284624F8008FA395 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E75514284624F8008FA395 /* PlayViewController.swift */; };
 		84E755172846255B008FA395 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E755162846255B008FA395 /* BookmarkViewController.swift */; };
+		84E755252846C28F008FA395 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E755232846C28F008FA395 /* MovieCollectionViewCell.swift */; };
+		84E755262846C28F008FA395 /* MovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E755242846C28F008FA395 /* MovieCollectionViewCell.xib */; };
+		966217F858661B2C7FAFD872 /* Pods_ItakSoidetMovve.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D6688E2225CC7A59A992D1 /* Pods_ItakSoidetMovve.framework */; };
 		C9A6ECE52846244B00E3C535 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6ECE42846244B00E3C535 /* NetworkManager.swift */; };
 		C9A6ECE72846252C00E3C535 /* ResponseMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6ECE62846252C00E3C535 /* ResponseMovies.swift */; };
 		C9A6ECE928465B8900E3C535 /* ResponseTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6ECE828465B8900E3C535 /* ResponseTV.swift */; };
@@ -33,10 +36,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04D6688E2225CC7A59A992D1 /* Pods_ItakSoidetMovve.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ItakSoidetMovve.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4850E89FC37D92531AF799B1 /* Pods-ItakSoidetMovve.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItakSoidetMovve.debug.xcconfig"; path = "Target Support Files/Pods-ItakSoidetMovve/Pods-ItakSoidetMovve.debug.xcconfig"; sourceTree = "<group>"; };
 		84E7551028462228008FA395 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		84E755122846249C008FA395 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		84E75514284624F8008FA395 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		84E755162846255B008FA395 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
+		84E755232846C28F008FA395 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		84E755242846C28F008FA395 /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionViewCell.xib; sourceTree = "<group>"; };
+		A555EF3738C3A9B3BD2BF970 /* Pods-ItakSoidetMovve.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItakSoidetMovve.release.xcconfig"; path = "Target Support Files/Pods-ItakSoidetMovve/Pods-ItakSoidetMovve.release.xcconfig"; sourceTree = "<group>"; };
 		C9A6ECE42846244B00E3C535 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C9A6ECE62846252C00E3C535 /* ResponseMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseMovies.swift; sourceTree = "<group>"; };
 		C9A6ECE828465B8900E3C535 /* ResponseTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseTV.swift; sourceTree = "<group>"; };
@@ -66,12 +74,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				966217F858661B2C7FAFD872 /* Pods_ItakSoidetMovve.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54ABFC9D44C9690A9465619A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4850E89FC37D92531AF799B1 /* Pods-ItakSoidetMovve.debug.xcconfig */,
+				A555EF3738C3A9B3BD2BF970 /* Pods-ItakSoidetMovve.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		84E755222846C27C008FA395 /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				84E755232846C28F008FA395 /* MovieCollectionViewCell.swift */,
+				84E755242846C28F008FA395 /* MovieCollectionViewCell.xib */,
+			);
+			name = CollectionCell;
+			sourceTree = "<group>";
+		};
 		C9A6ECE328461D8500E3C535 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +116,8 @@
 				F0FB60CB2844B313008078E4 /* README.md */,
 				F0FB60B32844AD33008078E4 /* ItakSoidetMovve */,
 				F0FB60B22844AD33008078E4 /* Products */,
+				54ABFC9D44C9690A9465619A /* Pods */,
+				FA7EF25F0773134601E276A1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,6 +174,14 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		FA7EF25F0773134601E276A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04D6688E2225CC7A59A992D1 /* Pods_ItakSoidetMovve.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FBCEA48F28451D420075F7CE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +195,7 @@
 		FBCEA49428451E800075F7CE /* FilmsCell */ = {
 			isa = PBXGroup;
 			children = (
+				84E755222846C27C008FA395 /* CollectionCell */,
 				FBCEA49028451E6D0075F7CE /* FilmsTableViewCell.swift */,
 				FBCEA49128451E6D0075F7CE /* FilmsTableViewCell.xib */,
 			);
@@ -207,9 +246,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0FB60C52844AD34008078E4 /* Build configuration list for PBXNativeTarget "ItakSoidetMovve" */;
 			buildPhases = (
+				B447D3AC88E1F7D8F35EBB1D /* [CP] Check Pods Manifest.lock */,
 				F0FB60AD2844AD33008078E4 /* Sources */,
 				F0FB60AE2844AD33008078E4 /* Frameworks */,
 				F0FB60AF2844AD33008078E4 /* Resources */,
+				2D3932F4621A92CC9C14BF0F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -264,10 +305,53 @@
 				FBCEA49828451E970075F7CE /* SerialsTableViewCell.xib in Resources */,
 				F0FB60BE2844AD34008078E4 /* Assets.xcassets in Resources */,
 				F0FB60BC2844AD33008078E4 /* Main.storyboard in Resources */,
+				84E755262846C28F008FA395 /* MovieCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2D3932F4621A92CC9C14BF0F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ItakSoidetMovve/Pods-ItakSoidetMovve-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ItakSoidetMovve/Pods-ItakSoidetMovve-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ItakSoidetMovve/Pods-ItakSoidetMovve-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B447D3AC88E1F7D8F35EBB1D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ItakSoidetMovve-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F0FB60AD2844AD33008078E4 /* Sources */ = {
@@ -289,6 +373,7 @@
 				84E755172846255B008FA395 /* BookmarkViewController.swift in Sources */,
 				FBA4E85F2844FB6400E77C7B /* MoviesModel.swift in Sources */,
 				FBCEA49728451E970075F7CE /* SerialsTableViewCell.swift in Sources */,
+				84E755252846C28F008FA395 /* MovieCollectionViewCell.swift in Sources */,
 				C9A6ECE72846252C00E3C535 /* ResponseMovies.swift in Sources */,
 				FBCEA49F28451FB00075F7CE /* DetailViewController.swift in Sources */,
 			);
@@ -432,6 +517,7 @@
 		};
 		F0FB60C62844AD34008078E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4850E89FC37D92531AF799B1 /* Pods-ItakSoidetMovve.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -462,6 +548,7 @@
 		};
 		F0FB60C72844AD34008078E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A555EF3738C3A9B3BD2BF970 /* Pods-ItakSoidetMovve.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
