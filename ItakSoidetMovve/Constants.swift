@@ -16,4 +16,11 @@ struct Constants {
     static let serialsCellID = "SerialsCell"
     static let actorsCellID = "ActorsCell" 
     static let detailSegueId = "detailSegue"
+    
+    struct Colors {
+        static let darkGray = "backgroundColor"
+        static let lightGray = "textColor"
+        static let white = "topicColor"
+        static let red = "buttonAndTabBarColor"
+    }
 }
