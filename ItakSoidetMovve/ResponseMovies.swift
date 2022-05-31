@@ -15,7 +15,13 @@ struct ResponseMovies: Decodable {
         let id: Int
         let title: String
         let release_date: String
-        let vote_average: Double
         let poster_path: String
+        
+        var releaseDate: String {
+            release_date
+        }
+        var posterPath: String {
+            poster_path
+        }
     }
 }
