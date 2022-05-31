@@ -23,4 +23,11 @@ struct Constants {
         static let white = "topicColor"
         static let red = "buttonAndTabBarColor"
     }
+    
+    struct NetWork {
+        static let baseUrl = "https://api.themoviedb.org/3/"
+        static let discoverMovies = "discover/movie"
+        static var fullUrlMovies = "\(baseUrl)\(discoverMovies)?api_key=\(Constants.apiKey)&language=ru"
+            
+    }
 }
