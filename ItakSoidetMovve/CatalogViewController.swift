@@ -82,6 +82,7 @@ class CatalogViewController: UIViewController {
         catalogTableView.delegate = self
         catalogTableView.dataSource = self
         registerCells()
+     
     }
  
     private func registerCells() {
