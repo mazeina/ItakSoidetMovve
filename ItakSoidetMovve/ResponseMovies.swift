@@ -6,12 +6,12 @@
 //
 
 import Foundation
-
-struct ResponseMovies: Decodable {
+ 
+struct ResponseMovies: Codable {
     let page: Int
     let results: [Movie]
     
-    struct Movie: Decodable {
+    struct Movie: Codable {
         let id: Int
         let title: String
         let release_date: String
@@ -25,3 +25,4 @@ struct ResponseMovies: Decodable {
         }
     }
 }
+ 

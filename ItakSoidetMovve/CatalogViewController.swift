@@ -23,21 +23,24 @@ extension CatalogViewController: UITableViewDataSource {
                                                            for: indexPath) as? FilmsTableViewCell else {
                 return UITableViewCell()
             }
-            cell.testLabel.text = "movies"
+            ///example for filling collection
+            cell.testLabel.text = movies.first?.title
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.serialsCellID,
                                                            for: indexPath) as? SerialsTableViewCell else {
                 return UITableViewCell()
             }
-            cell.testLabel.text = "tvshows"
+            ///example for filling collection
+            cell.testLabel.text = tvShows.first?.name
             return cell
         default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.actorsCellID,
                                                            for: indexPath) as? ActorsListTableViewCell else {
                 return UITableViewCell()
             }
-            cell.testLabel.text = "actors"
+            ///example for filling collection
+            cell.testLabel.text = tvShows.first?.idString
             return cell
         }
     }
@@ -76,15 +79,21 @@ class CatalogViewController: UIViewController {
         ActorsListTableViewCell()
     ]
     
+    var movies: [MoviesModel] = []
+    var tvShows: [TvShowModel] = []
+    let networkManager = NetworkManager()
+     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         catalogTableView.delegate = self
         catalogTableView.dataSource = self
         registerCells()
-     
+      
+        getMovies()
+        getTvShow()
     }
- 
+    
     private func registerCells() {
         catalogTableView.register(UINib(nibName: Constants.filmsNibName, bundle: nil),
                                   forCellReuseIdentifier: Constants.filmsCellID)
@@ -92,5 +101,17 @@ class CatalogViewController: UIViewController {
                                   forCellReuseIdentifier: Constants.serialsCellID)
         catalogTableView.register(UINib(nibName: Constants.actorsNibName, bundle: nil),
                                   forCellReuseIdentifier: Constants.actorsCellID)
+    }
+     
+    private func getMovies() {
+        networkManager.getDiscoverMovies { movies in
+            self.movies = [movies]
+        }
+    }
+    
+    private func getTvShow() {
+        networkManager.getDiscoverTV { tv in
+            self.tvShows = [tv]
+        }
     }
 }

@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct ResponseTV: Decodable {
+struct ResponseTV: Codable {
     let page: Int
     let results: [TV]
     
-    struct TV: Decodable {
+    struct TV: Codable {
         var id: Int
         var name: String
         var poster_path: String
@@ -20,3 +20,4 @@ struct ResponseTV: Decodable {
         }
     }
 }
+ 
