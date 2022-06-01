@@ -11,8 +11,7 @@ class FilmsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var moviesCollectionView: UICollectionView!
 
-    var movies: ResponseMovies? = nil
-    let networkManager = NetworkManager()
+    lazy var catalogVC: CatalogViewController = CatalogViewController()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,7 +19,7 @@ class FilmsTableViewCell: UITableViewCell {
         moviesCollectionView.dataSource = self
         moviesCollectionView.delegate = self
         setupCollectionViewUI()
-        loadMovies {
+        catalogVC.loadMovies {
             DispatchQueue.main.async {
                 self.moviesCollectionView.reloadData()
             }
@@ -31,14 +30,6 @@ class FilmsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-
-    func loadMovies(completion: @escaping(() -> ())) {
-        networkManager.getDiscoverMovies(completion: { movies in
-
-            self.movies = movies
-            completion()
-        })
     }
 
     func setupCollectionViewUI(){
@@ -52,13 +43,13 @@ class FilmsTableViewCell: UITableViewCell {
 extension FilmsTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-        movies?.results.count ?? 1
+        catalogVC.movies?.results.count ?? 1
 
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let currentMovie = movies?.results[indexPath.row]
+        let currentMovie = catalogVC.movies?.results[indexPath.row]
 
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.movieCollectionCellID,for: indexPath) as? MovieCollectionViewCell else {
 

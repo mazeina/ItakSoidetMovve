@@ -110,6 +110,14 @@ class CatalogViewController: UIViewController {
 //            self.movies = [movies]
 //        }
 //    }
+
+    func loadMovies(completion: @escaping(() -> ())) {
+        networkManager.getDiscoverMovies(completion: { movies in
+
+            self.movies = movies
+            completion()
+        })
+    }
     
     private func getTvShow() {
         networkManager.getDiscoverTV { tv in
