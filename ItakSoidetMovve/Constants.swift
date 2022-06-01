@@ -18,6 +18,8 @@ struct Constants {
     static let detailSegueId = "detailSegue"
     static let movieCollectionCell = "MovieCollectionViewCell"
     static let movieCollectionCellID = "MovieCollectionViewCell"
+    static let serialCollectionCell = "SerialsCellItem"
+    static let serialCollectionCellID = "SerialsCellItem"
     
     struct Colors {
         static let darkGray = "backgroundColor"

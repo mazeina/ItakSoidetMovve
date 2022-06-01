@@ -44,7 +44,7 @@ class NetworkManager {
 
 // MARK: - TV Shows
     
-    func getDiscoverTV(completionHandler: @escaping (TvShowModel) -> Void) {
+    func getDiscoverTV(completion: @escaping ((ResponseTV) -> ())) {
         if let url = URL(string: Constants.NetWork.fullUrlTV) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
@@ -54,7 +54,7 @@ class NetworkManager {
                 }
                 if let safeData = data {
                     if let tv = self.TVParseJSON(withData: safeData) {
-                        completionHandler(tv)
+                        completion(tv)
                     }
                 }
             }
@@ -63,12 +63,13 @@ class NetworkManager {
     }
 
 
-    func TVParseJSON(withData data: Data) -> TvShowModel? {
+    func TVParseJSON(withData data: Data) -> ResponseTV? {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(ResponseTV.self, from: data)
-            guard let tv = TvShowModel(tvShow: decodedData) else { return nil }
-            return tv
+            return decodedData
+            //guard let tv = ResponseTV(tvShow: decodedData) else { return nil }
+            //return tv
         } catch let error as NSError {
             print(error.localizedDescription)
         }

@@ -32,7 +32,7 @@ extension CatalogViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
             ///example for filling collection
-            cell.testLabel.text = tvShows.first?.name
+            //cell.testLabel.text = tvShows.first?.name
             return cell
         default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.actorsCellID,
@@ -60,7 +60,7 @@ extension CatalogViewController: UITableViewDelegate {
         case 0:
             return 300
         case 1:
-            return 150
+            return 300
         default:
             return 100
         }
@@ -92,7 +92,7 @@ class CatalogViewController: UIViewController {
         registerCells()
       
 //        getMovies()
-        getTvShow()
+//        getTvShow()
     }
     
     private func registerCells() {
@@ -118,9 +118,9 @@ class CatalogViewController: UIViewController {
         })
     }
     
-    private func getTvShow() {
-        networkManager.getDiscoverTV { tv in
-            self.tvShows = [tv]
-        }
-    }
+//    private func getTvShow() {
+//        networkManager.getDiscoverTV { tv in
+//            self.tvShows = [tv]
+//        }
+//    }
 }
