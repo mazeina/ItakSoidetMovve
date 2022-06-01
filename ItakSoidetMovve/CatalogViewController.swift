@@ -80,8 +80,7 @@ class CatalogViewController: UIViewController {
         SerialsTableViewCell(),
         ActorsListTableViewCell()
     ]
-    
-//    var movies: [MoviesModel] = []
+
     var tvShows: [TvShowModel] = []
     let networkManager = NetworkManager()
      
