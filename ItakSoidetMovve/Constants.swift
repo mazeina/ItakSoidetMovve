@@ -34,6 +34,9 @@ struct Constants {
         static let discoverTV = "discover/tv"
         static var fullUrlMovies = "\(baseUrl)\(discoverMovies)?api_key=\(Constants.apiKey)&language=ru"
         static var fullUrlTV = "\(baseUrl)\(discoverTV)?api_key=\(Constants.apiKey)&language=ru"
+        static var fullUrlCreditsMovie = "\(baseUrl)/movie/157336/credits?api_key=\(Constants.apiKey)&language=ru"
+        static var fullUrlCreditsTV = "\(baseUrl)/tv/66732/credits?api_key=\(Constants.apiKey)&language=ru"
+        
         //https://api.themoviedb.org/3/discover/tv?api_key=32ea20e318793cf10469df41ffe5990d&language=ru
         static let defaultImagePath = "https://image.tmdb.org/t/p/original"
     }

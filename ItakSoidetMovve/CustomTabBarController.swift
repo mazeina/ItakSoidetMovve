@@ -36,6 +36,6 @@ class CustomTabBarController: UITabBarController {
      }
     
      override func viewDidLayoutSubviews() {
-         tabBar.frame = CGRect(x: 0,y: 720,width: UIScreen.main.bounds.width,height: 55)
+         tabBar.frame = CGRect(x: 0,y: (UIScreen.main.bounds.height - tabBar.frame.height) ,width: UIScreen.main.bounds.width,height: 55)
      }
 }

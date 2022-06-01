@@ -13,6 +13,10 @@
 		84E755172846255B008FA395 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E755162846255B008FA395 /* BookmarkViewController.swift */; };
 		84E755252846C28F008FA395 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E755232846C28F008FA395 /* MovieCollectionViewCell.swift */; };
 		84E755262846C28F008FA395 /* MovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E755242846C28F008FA395 /* MovieCollectionViewCell.xib */; };
+		8FD8AF3E2847E33200EADE55 /* ResponseCreditsMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8AF3D2847E33200EADE55 /* ResponseCreditsMovie.swift */; };
+		8FD8AF402847E33C00EADE55 /* ResponseCreditsTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8AF3F2847E33C00EADE55 /* ResponseCreditsTV.swift */; };
+		8FD8AF422847E38900EADE55 /* CreditsMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8AF412847E38900EADE55 /* CreditsMovieModel.swift */; };
+		8FD8AF442847E3A600EADE55 /* CreditsTVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8AF432847E3A600EADE55 /* CreditsTVModel.swift */; };
 		966217F858661B2C7FAFD872 /* Pods_ItakSoidetMovve.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D6688E2225CC7A59A992D1 /* Pods_ItakSoidetMovve.framework */; };
 		C9A6ECE52846244B00E3C535 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6ECE42846244B00E3C535 /* NetworkManager.swift */; };
 		C9A6ECE72846252C00E3C535 /* ResponseMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6ECE62846252C00E3C535 /* ResponseMovies.swift */; };
@@ -46,6 +50,10 @@
 		84E755162846255B008FA395 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		84E755232846C28F008FA395 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		84E755242846C28F008FA395 /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionViewCell.xib; sourceTree = "<group>"; };
+		8FD8AF3D2847E33200EADE55 /* ResponseCreditsMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCreditsMovie.swift; sourceTree = "<group>"; };
+		8FD8AF3F2847E33C00EADE55 /* ResponseCreditsTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCreditsTV.swift; sourceTree = "<group>"; };
+		8FD8AF412847E38900EADE55 /* CreditsMovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsMovieModel.swift; sourceTree = "<group>"; };
+		8FD8AF432847E3A600EADE55 /* CreditsTVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsTVModel.swift; sourceTree = "<group>"; };
 		A555EF3738C3A9B3BD2BF970 /* Pods-ItakSoidetMovve.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItakSoidetMovve.release.xcconfig"; path = "Target Support Files/Pods-ItakSoidetMovve/Pods-ItakSoidetMovve.release.xcconfig"; sourceTree = "<group>"; };
 		C9A6ECE42846244B00E3C535 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C9A6ECE62846252C00E3C535 /* ResponseMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseMovies.swift; sourceTree = "<group>"; };
@@ -109,6 +117,8 @@
 				C9A6ECE42846244B00E3C535 /* NetworkManager.swift */,
 				C9A6ECE62846252C00E3C535 /* ResponseMovies.swift */,
 				C9A6ECE828465B8900E3C535 /* ResponseTV.swift */,
+				8FD8AF3D2847E33200EADE55 /* ResponseCreditsMovie.swift */,
+				8FD8AF3F2847E33C00EADE55 /* ResponseCreditsTV.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -174,6 +184,8 @@
 			children = (
 				FBA4E85E2844FB6400E77C7B /* MoviesModel.swift */,
 				FBCEA4A52846ABDE0075F7CE /* TvShowModel.swift */,
+				8FD8AF412847E38900EADE55 /* CreditsMovieModel.swift */,
+				8FD8AF432847E3A600EADE55 /* CreditsTVModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -376,12 +388,15 @@
 				FBCEA4A2284520130075F7CE /* ActorsListTableViewCell.swift in Sources */,
 				F0FB60B92844AD33008078E4 /* CatalogViewController.swift in Sources */,
 				84E7551128462228008FA395 /* CustomTabBarController.swift in Sources */,
+				8FD8AF442847E3A600EADE55 /* CreditsTVModel.swift in Sources */,
+				8FD8AF402847E33C00EADE55 /* ResponseCreditsTV.swift in Sources */,
 				84E755132846249C008FA395 /* UserViewController.swift in Sources */,
 				C9A6ECE928465B8900E3C535 /* ResponseTV.swift in Sources */,
 				84E75515284624F8008FA395 /* PlayViewController.swift in Sources */,
 				C9A6ECE52846244B00E3C535 /* NetworkManager.swift in Sources */,
 				FBCEA49228451E6D0075F7CE /* FilmsTableViewCell.swift in Sources */,
 				F0FB60B52844AD33008078E4 /* AppDelegate.swift in Sources */,
+				8FD8AF3E2847E33200EADE55 /* ResponseCreditsMovie.swift in Sources */,
 				F0FB60B72844AD33008078E4 /* SceneDelegate.swift in Sources */,
 				FBCEA4A62846ABDE0075F7CE /* TvShowModel.swift in Sources */,
 				FBCEA49B28451EAB0075F7CE /* Constants.swift in Sources */,
@@ -389,6 +404,7 @@
 				FBA4E85F2844FB6400E77C7B /* MoviesModel.swift in Sources */,
 				FBCEA49728451E970075F7CE /* SerialsTableViewCell.swift in Sources */,
 				84E755252846C28F008FA395 /* MovieCollectionViewCell.swift in Sources */,
+				8FD8AF422847E38900EADE55 /* CreditsMovieModel.swift in Sources */,
 				C9A6ECE72846252C00E3C535 /* ResponseMovies.swift in Sources */,
 				FBCEA49F28451FB00075F7CE /* DetailViewController.swift in Sources */,
 			);
