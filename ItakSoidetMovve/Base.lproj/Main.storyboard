@@ -7,6 +7,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -73,10 +74,112 @@
                     <view key="view" contentMode="scaleToFill" id="YoE-AZ-era">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="cbL-9b-IuA">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="foa-DX-du3"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of film/tvShow" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7L-jg-Rqi">
+                                <rect key="frame" x="20" y="430" width="374" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="oyn-mi-odA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" name="topicColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата выпуска фильма/сериала" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfo-O4-u0Y">
+                                <rect key="frame" x="20" y="464" width="374" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="MwA-Rv-172"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" name="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Рейтинг: 9/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7b-7o-vI1">
+                                <rect key="frame" x="20" y="496" width="374" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="96V-a1-mvr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание: прпррпар попопопо прарра воп овповп иолиаи вапвпвиавпвапвавпвпварв реврваивавпкрур пврчи пркрачвкр" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5S-2w-lT2">
+                                <rect key="frame" x="20" y="528" width="374" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="Q9A-1V-hFh"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="TFf-Wj-nwZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="teV-FH-Ydw">
+                                <rect key="frame" x="20" y="597" width="374" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="RtW-aC-SLz"/>
+                                    <constraint firstAttribute="width" constant="374" id="VOq-0J-h3p"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UtT-FW-JjF">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ActorsCollectionView" id="Qfs-rV-YNb">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DfO-gX-NFK">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDu-a6-rWp">
+                                <rect key="frame" x="132" y="775" width="150" height="38"/>
+                                <color key="backgroundColor" name="buttonAndTabBarColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="vlc-Hk-MpC"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Watch Now">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                    <color key="baseForegroundColor" name="topicColor"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cJ2-se-BQU"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cbL-9b-IuA" firstAttribute="top" secondItem="YoE-AZ-era" secondAttribute="top" id="0iv-TN-v2j"/>
+                            <constraint firstItem="T5S-2w-lT2" firstAttribute="top" secondItem="F7b-7o-vI1" secondAttribute="bottom" constant="8" symbolic="YES" id="0qc-ky-zSO"/>
+                            <constraint firstItem="F7b-7o-vI1" firstAttribute="centerX" secondItem="YoE-AZ-era" secondAttribute="centerX" id="1ql-ow-cEy"/>
+                            <constraint firstItem="Gfo-O4-u0Y" firstAttribute="top" secondItem="J7L-jg-Rqi" secondAttribute="bottom" constant="-2" id="9Au-rk-wRe"/>
+                            <constraint firstItem="T5S-2w-lT2" firstAttribute="centerX" secondItem="YoE-AZ-era" secondAttribute="centerX" id="9Yl-gH-lL0"/>
+                            <constraint firstItem="Gfo-O4-u0Y" firstAttribute="centerX" secondItem="YoE-AZ-era" secondAttribute="centerX" id="9sv-oa-H64"/>
+                            <constraint firstItem="teV-FH-Ydw" firstAttribute="centerX" secondItem="YoE-AZ-era" secondAttribute="centerX" id="9wy-kh-cA3"/>
+                            <constraint firstItem="J7L-jg-Rqi" firstAttribute="centerY" secondItem="YoE-AZ-era" secondAttribute="centerY" id="APL-so-Ker"/>
+                            <constraint firstItem="zDu-a6-rWp" firstAttribute="centerX" secondItem="YoE-AZ-era" secondAttribute="centerX" id="Nlb-LI-78R"/>
+                            <constraint firstItem="teV-FH-Ydw" firstAttribute="top" secondItem="T5S-2w-lT2" secondAttribute="bottom" constant="8" symbolic="YES" id="Ufl-ru-Y1m"/>
+                            <constraint firstItem="J7L-jg-Rqi" firstAttribute="centerX" secondItem="YoE-AZ-era" secondAttribute="centerX" id="X5r-m0-t9q"/>
+                            <constraint firstItem="cJ2-se-BQU" firstAttribute="bottom" secondItem="zDu-a6-rWp" secondAttribute="bottom" id="gKl-e9-GwJ"/>
+                            <constraint firstItem="cbL-9b-IuA" firstAttribute="leading" secondItem="YoE-AZ-era" secondAttribute="leading" id="gPV-2N-x3J"/>
+                            <constraint firstItem="cbL-9b-IuA" firstAttribute="trailing" secondItem="cJ2-se-BQU" secondAttribute="trailing" id="qWo-3Y-t3e"/>
+                            <constraint firstItem="F7b-7o-vI1" firstAttribute="top" secondItem="Gfo-O4-u0Y" secondAttribute="bottom" constant="8" symbolic="YES" id="tx1-aw-9Rl"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="c97-7p-Vsh"/>
+                    <navigationItem key="navigationItem" id="c97-7p-Vsh">
+                        <barButtonItem key="rightBarButtonItem" image="bookmarkIcon" id="FJX-E8-WoR">
+                            <color key="tintColor" name="topicColor"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRG-1j-cWq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -178,6 +281,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Image" width="300" height="423"/>
         <image name="bookmarkIcon" width="24" height="24"/>
         <image name="homeIcon" width="24" height="24"/>
         <image name="playIcon" width="24" height="24"/>
@@ -188,11 +292,17 @@
         <namedColor name="buttonAndTabBarColor">
             <color red="0.7839999794960022" green="0.20399999618530273" blue="0.23899999260902405" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="textColor">
+            <color red="0.57599997520446777" green="0.57300001382827759" blue="0.59600001573562622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="topicColor">
             <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
