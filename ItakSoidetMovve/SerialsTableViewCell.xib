@@ -18,17 +18,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="250" height="310"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tv shows" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xer-h3-Iez">
-                        <rect key="frame" x="16" y="16" width="71" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="q4J-75-4bZ"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="z4k-eQ-5u9">
-                        <rect key="frame" x="0.0" y="44" width="250" height="266"/>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="z4k-eQ-5u9">
+                        <rect key="frame" x="0.0" y="25" width="250" height="285"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ycO-9q-xAR">
                             <size key="itemSize" width="128" height="128"/>
@@ -37,21 +28,30 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tv shows" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xer-h3-Iez">
+                        <rect key="frame" x="16" y="5" width="76" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="tgp-7X-AwV"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="xer-h3-Iez" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="4hk-fd-DDo"/>
-                    <constraint firstItem="z4k-eQ-5u9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Akm-Ja-CRi"/>
-                    <constraint firstAttribute="trailing" secondItem="z4k-eQ-5u9" secondAttribute="trailing" id="Ga4-0Y-4jT"/>
-                    <constraint firstItem="xer-h3-Iez" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="TKU-TD-kzE"/>
-                    <constraint firstItem="z4k-eQ-5u9" firstAttribute="top" secondItem="xer-h3-Iez" secondAttribute="bottom" constant="8" id="apV-Sb-KEP"/>
-                    <constraint firstAttribute="bottom" secondItem="z4k-eQ-5u9" secondAttribute="bottom" id="jgR-wn-SwJ"/>
+                    <constraint firstItem="z4k-eQ-5u9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="5JD-TO-6St"/>
+                    <constraint firstItem="xer-h3-Iez" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="DUs-oI-jgU"/>
+                    <constraint firstAttribute="bottom" secondItem="z4k-eQ-5u9" secondAttribute="bottom" id="J2d-cw-m9i"/>
+                    <constraint firstItem="z4k-eQ-5u9" firstAttribute="top" secondItem="xer-h3-Iez" secondAttribute="bottom" id="Trz-6v-8rg"/>
+                    <constraint firstAttribute="trailing" secondItem="z4k-eQ-5u9" secondAttribute="trailing" id="VZX-GP-lVd"/>
+                    <constraint firstItem="xer-h3-Iez" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="fF6-TM-cji"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="serialsViewCollection" destination="z4k-eQ-5u9" id="5AG-kw-P1j"/>
             </connections>
-            <point key="canvasLocation" x="13.043478260869566" y="165.40178571428569"/>
+            <point key="canvasLocation" x="13.043478260869566" y="164.73214285714286"/>
         </tableViewCell>
     </objects>
     <resources>

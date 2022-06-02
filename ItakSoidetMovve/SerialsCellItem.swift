@@ -13,7 +13,8 @@ class SerialsCellItem: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var cellImageView: UIImageView!
     @IBOutlet weak var containerView: UIView!
-
+    @IBOutlet weak var dateLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -23,13 +24,12 @@ class SerialsCellItem: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-
         self.cellImageView.layer.cornerRadius = 16
-
     }
 
-    func configureWith(movieName: String?, profilePath: String?) {
+    func configureWith(movieName: String?, profilePath: String?, date: String?) {
         self.titleLabel.text = movieName
+        self.dateLabel.text = date
         self.loadImage(profilePath: profilePath)
         self.setupCell()
     }
@@ -37,6 +37,7 @@ class SerialsCellItem: UICollectionViewCell {
         self.cellImageView.contentMode = .scaleToFill
         titleLabel.textColor = .systemGray
         titleLabel.font = .boldSystemFont(ofSize: 13)
+        dateLabel.textColor = .systemGray
     }
 
     private func loadImage(profilePath: String?) {
