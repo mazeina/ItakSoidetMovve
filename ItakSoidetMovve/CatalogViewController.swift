@@ -85,7 +85,6 @@ class CatalogViewController: UIViewController {
         catalogTableView.dataSource = self
         registerCells()
         
-        navigationItem.title = "ItakSoidetMovve"
         catalogTableView.isScrollEnabled = false
     }
     
