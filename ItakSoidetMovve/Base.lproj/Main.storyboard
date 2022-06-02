@@ -19,21 +19,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tPE-sR-vQo">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <rect key="frame" x="0.0" y="151" width="414" height="662"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <sections/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ItakSoidetMov" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKQ-Id-kPq">
+                                <rect key="frame" x="20" y="88" width="182.5" height="53"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <color key="textColor" name="topicColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ve" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfu-Fu-yXB">
+                                <rect key="frame" x="202.5" y="88" width="29.5" height="53"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <color key="textColor" name="buttonAndTabBarColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mjh-a3-ZQk"/>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
                             <constraint firstItem="tPE-sR-vQo" firstAttribute="leading" secondItem="mjh-a3-ZQk" secondAttribute="leading" id="1Dk-hm-42J"/>
+                            <constraint firstItem="cfu-Fu-yXB" firstAttribute="leading" secondItem="TKQ-Id-kPq" secondAttribute="trailing" id="D7r-hl-NmI"/>
+                            <constraint firstItem="tPE-sR-vQo" firstAttribute="top" secondItem="TKQ-Id-kPq" secondAttribute="bottom" constant="10" id="HtL-57-Bgp"/>
+                            <constraint firstItem="TKQ-Id-kPq" firstAttribute="leading" secondItem="mjh-a3-ZQk" secondAttribute="leading" constant="20" id="Nd3-zc-TtI"/>
                             <constraint firstItem="tPE-sR-vQo" firstAttribute="trailing" secondItem="mjh-a3-ZQk" secondAttribute="trailing" id="Vin-s8-dCR"/>
                             <constraint firstItem="tPE-sR-vQo" firstAttribute="leading" secondItem="mjh-a3-ZQk" secondAttribute="leading" id="YKS-xB-Roy"/>
+                            <constraint firstItem="tPE-sR-vQo" firstAttribute="top" secondItem="cfu-Fu-yXB" secondAttribute="bottom" constant="10" id="Z7o-I4-BIT"/>
+                            <constraint firstItem="TKQ-Id-kPq" firstAttribute="top" secondItem="mjh-a3-ZQk" secondAttribute="top" id="ZSE-Tw-0hb"/>
+                            <constraint firstItem="cfu-Fu-yXB" firstAttribute="leading" secondItem="TKQ-Id-kPq" secondAttribute="trailing" id="cIg-fG-oml"/>
                             <constraint firstItem="mjh-a3-ZQk" firstAttribute="bottom" secondItem="tPE-sR-vQo" secondAttribute="bottom" id="ea1-qU-nm5"/>
-                            <constraint firstItem="tPE-sR-vQo" firstAttribute="top" secondItem="mjh-a3-ZQk" secondAttribute="top" id="jcf-EN-R6x"/>
-                            <constraint firstItem="tPE-sR-vQo" firstAttribute="top" secondItem="mjh-a3-ZQk" secondAttribute="top" id="kJH-Wl-Cth"/>
+                            <constraint firstItem="cfu-Fu-yXB" firstAttribute="top" secondItem="mjh-a3-ZQk" secondAttribute="top" id="inh-mL-tDT"/>
+                            <constraint firstItem="tPE-sR-vQo" firstAttribute="top" secondItem="mjh-a3-ZQk" secondAttribute="top" constant="63" id="jcf-EN-R6x"/>
+                            <constraint firstItem="tPE-sR-vQo" firstAttribute="top" secondItem="mjh-a3-ZQk" secondAttribute="top" constant="63" id="kJH-Wl-Cth"/>
                             <constraint firstItem="tPE-sR-vQo" firstAttribute="trailing" secondItem="mjh-a3-ZQk" secondAttribute="trailing" id="zaY-5X-lBo"/>
                         </constraints>
                     </view>
@@ -69,8 +88,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8rj-Hm-cZd" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="homeIcon" id="hHr-8f-XcT"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="j0b-nF-vbU">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j0b-nF-vbU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" name="topicColor"/>
@@ -165,6 +184,9 @@
         <image name="userIcon" width="24" height="24"/>
         <namedColor name="backgroundColor">
             <color red="0.090000003576278687" green="0.093999996781349182" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="buttonAndTabBarColor">
+            <color red="0.7839999794960022" green="0.20399999618530273" blue="0.23899999260902405" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="topicColor">
             <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
