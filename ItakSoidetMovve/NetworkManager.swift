@@ -75,5 +75,69 @@ class NetworkManager {
         }
         return nil
     }
+    
+    // MARK: - Movie Actors
+
+    func getDiscoverCreditsMovie(completion: @escaping((ResponseCreditsMovie) -> ())) {
+        if let url = URL(string: Constants.NetWork.fullUrlCreditsMovie) {
+            let session = URLSession(configuration: .default)
+            let task = session.dataTask(with: url) { data, response, error in
+                if error != nil {
+                    print("error")
+                    return
+                }
+
+                if let safeData = data {
+                    if let creditsMovie = self.parseJSONCreditsMovie(safeData) {
+                        completion(creditsMovie)
+                    }
+                }
+            }
+            task.resume()
+        }
+    }
+
+    func parseJSONCreditsMovie(_ data: Data) -> ResponseCreditsMovie? {
+        let decoder = JSONDecoder()
+        do {
+            let decodedData = try decoder.decode(ResponseCreditsMovie.self, from: data)
+            return decodedData
+        } catch {
+            print("error")
+            return nil
+        }
+    }
+    
+    // MARK: - TV Actors
+
+    func getDiscoverCreditsMovie(completion: @escaping((ResponseCreditsTV) -> ())) {
+        if let url = URL(string: Constants.NetWork.fullUrlCreditsTV) {
+            let session = URLSession(configuration: .default)
+            let task = session.dataTask(with: url) { data, response, error in
+                if error != nil {
+                    print("error")
+                    return
+                }
+
+                if let safeData = data {
+                    if let creditsTV = self.parseJSONCreditsTV(safeData) {
+                        completion(creditsTV)
+                    }
+                }
+            }
+            task.resume()
+        }
+    }
+
+    func parseJSONCreditsTV(_ data: Data) -> ResponseCreditsTV? {
+        let decoder = JSONDecoder()
+        do {
+            let decodedData = try decoder.decode(ResponseCreditsTV.self, from: data)
+            return decodedData
+        } catch {
+            print("error")
+            return nil
+        }
+    }
 }
 
