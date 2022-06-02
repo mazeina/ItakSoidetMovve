@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieActorsCollectionViewCell" id="LpZ-CH-NDM" customClass="ActorsCollectionViewCell" customModule="TMDb_app" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="140"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="140"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYs-6g-efS">
+                        <rect key="frame" x="0.0" y="0.0" width="80" height="140"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AvM-6I-TPt">
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="114"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQI-S1-PQx">
+                                <rect key="frame" x="0.0" y="118" width="80" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                <color key="textColor" name="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="1FS-i3-UIh"/>
+                            <constraint firstAttribute="trailing" secondItem="AQI-S1-PQx" secondAttribute="trailing" id="3e2-ic-7s9"/>
+                            <constraint firstAttribute="height" constant="140" id="G8t-oD-y9O"/>
+                            <constraint firstItem="AvM-6I-TPt" firstAttribute="top" secondItem="KYs-6g-efS" secondAttribute="top" id="Xu4-A4-ZfT"/>
+                            <constraint firstItem="AQI-S1-PQx" firstAttribute="top" secondItem="AvM-6I-TPt" secondAttribute="bottom" constant="4" id="YLE-Dv-2mZ"/>
+                            <constraint firstAttribute="trailing" secondItem="AvM-6I-TPt" secondAttribute="trailing" id="mFn-nn-WFA"/>
+                            <constraint firstItem="AvM-6I-TPt" firstAttribute="leading" secondItem="KYs-6g-efS" secondAttribute="leading" id="opB-QQ-OOZ"/>
+                            <constraint firstItem="AQI-S1-PQx" firstAttribute="leading" secondItem="KYs-6g-efS" secondAttribute="leading" id="u5Z-kE-xhk"/>
+                            <constraint firstAttribute="bottom" secondItem="AQI-S1-PQx" secondAttribute="bottom" constant="4" id="xEf-Wm-CH6"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="kkn-Ay-bH5"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="KYs-6g-efS" secondAttribute="bottom" id="Dq8-Mx-MD1"/>
+                <constraint firstAttribute="trailing" secondItem="KYs-6g-efS" secondAttribute="trailing" id="UcN-wo-vz0"/>
+                <constraint firstItem="KYs-6g-efS" firstAttribute="leading" secondItem="LpZ-CH-NDM" secondAttribute="leading" id="Y5e-8k-MJJ"/>
+                <constraint firstItem="KYs-6g-efS" firstAttribute="top" secondItem="LpZ-CH-NDM" secondAttribute="top" id="bsE-IT-xrW"/>
+            </constraints>
+            <size key="customSize" width="187" height="300"/>
+            <connections>
+                <outlet property="cellImageView" destination="AvM-6I-TPt" id="yzp-oq-CwH"/>
+                <outlet property="cellTitleLabel" destination="AQI-S1-PQx" id="WTO-Zj-Ob1"/>
+            </connections>
+            <point key="canvasLocation" x="236.23188405797103" y="236.38392857142856"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="textColor">
+            <color red="0.57599997520446777" green="0.57300001382827759" blue="0.59600001573562622" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

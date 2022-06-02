@@ -10,6 +10,8 @@ import Foundation
 class NetworkManager {
     
 // MARK: - Movies
+
+    static let shared: NetworkManager = NetworkManager()
    
     func getDiscoverMovies(completion: @escaping((ResponseMovies) -> ())) {
         if let url = URL(string: Constants.NetWork.fullUrlMovies) {
@@ -29,7 +31,6 @@ class NetworkManager {
             task.resume()
         }
     }
-
 
     func parseJSON(_ data: Data) -> ResponseMovies? {
         let decoder = JSONDecoder()
@@ -62,7 +63,6 @@ class NetworkManager {
         }
     }
 
-
     func TVParseJSON(withData data: Data) -> ResponseTV? {
         let decoder = JSONDecoder()
         do {
@@ -78,7 +78,7 @@ class NetworkManager {
     
     // MARK: - Movie Actors
 
-    func getDiscoverCreditsMovie(completion: @escaping((ResponseCreditsMovie) -> ())) {
+    func getDiscoverCreditsMovie(completion: @escaping(([ResponseCreditsMovie.Cast]) -> ())) {
         if let url = URL(string: Constants.NetWork.fullUrlCreditsMovie) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
@@ -89,7 +89,7 @@ class NetworkManager {
 
                 if let safeData = data {
                     if let creditsMovie = self.parseJSONCreditsMovie(safeData) {
-                        completion(creditsMovie)
+                        completion(creditsMovie.cast)
                     }
                 }
             }
@@ -110,7 +110,7 @@ class NetworkManager {
     
     // MARK: - TV Actors
 
-    func getDiscoverCreditsMovie(completion: @escaping((ResponseCreditsTV) -> ())) {
+    func getDiscoverCreditsTVShow(completion: @escaping((ResponseCreditsTV) -> ())) {
         if let url = URL(string: Constants.NetWork.fullUrlCreditsTV) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in

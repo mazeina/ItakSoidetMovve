@@ -72,11 +72,7 @@ class CatalogViewController: UIViewController {
     let allCells = [
         FilmsTableViewCell(),
         SerialsTableViewCell(),
-        //ActorsListTableViewCell()
     ]
-    
-    var tvShows: [TvShowModel] = []
-    let networkManager = NetworkManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,10 +92,33 @@ class CatalogViewController: UIViewController {
     }
     
     func loadMovies(completion: @escaping(() -> ())) {
-        networkManager.getDiscoverMovies(completion: { movies in
+        NetworkManager.shared.getDiscoverMovies(completion: { movies in
             
             self.movies = movies
             completion()
         })
     }
+
+        func pushMovieDetailController(with indexPath: IndexPath) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let movieIdentifier = String(describing: DetailMoviesViewController.self)
+    
+            if let detailViewController = storyboard.instantiateViewController(identifier: movieIdentifier) as? DetailMoviesViewController {
+                detailViewController.movie = movies?.results[indexPath.row]
+
+                self.navigationController?.pushViewController(detailViewController, animated: true)
+            }
+        }
+
+//    func pushMovieDetailController(with indexPath: IndexPath) {
+//        self.performSegue(withIdentifier: "detailMovieSegue", sender: self)
+//    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == Constants.detailMovieSegue {
+//            let destinationController = segue.destination as? DetailMoviesViewController
+//            let cell = sender as? // Cell //
+//
+//            destinationController
+//        }
+//    }
 }

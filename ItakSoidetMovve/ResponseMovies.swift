@@ -16,12 +16,18 @@ struct ResponseMovies: Codable {
         let title: String
         let release_date: String
         let poster_path: String
+        let overview: String
+        var vote_average: Double
         
         var releaseDate: String {
             release_date
         }
         var posterPath: String {
             poster_path
+        }
+
+        var voteAverage: Double {
+            vote_average
         }
     }
 }

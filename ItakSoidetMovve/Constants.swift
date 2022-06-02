@@ -15,12 +15,13 @@ struct Constants {
     static let filmsCellID = "FilmsCell"
     static let serialsCellID = "SerialsCell"
     static let actorsCellID = "ActorsCell" 
-    static let detailSegueId = "detailSegue"
     static let movieCollectionCell = "MovieCollectionViewCell"
     static let movieCollectionCellID = "MovieCollectionViewCell"
     static let serialCollectionCell = "SerialsCellItem"
     static let serialCollectionCellID = "SerialsCellItem"
-    static let actorsCollectionViewCellID = "ActorsCollectionView"
+    static let movieActorsCollectionViewCellID = "MovieActorsCollectionViewCell"
+    static let movieActorsCollectionViewCell = "MovieActorsCollectionViewCell"
+    static let detailMovieSegue = "detailMovieSegue"
     
     struct Colors {
         static let darkGray = "backgroundColor"
