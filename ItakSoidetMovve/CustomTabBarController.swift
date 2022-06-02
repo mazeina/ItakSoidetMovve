@@ -24,7 +24,6 @@ class CustomTabBarController: UITabBarController {
         layer.isHidden = false
         layer.masksToBounds = false
         layer.fillColor = UIColor(named: Constants.Colors.red)?.cgColor
-
          tabBar.layer.insertSublayer(layer, at: 0)
          if let items = self.tabBar.items {
            items.forEach { item in item.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -15, right: 0) }

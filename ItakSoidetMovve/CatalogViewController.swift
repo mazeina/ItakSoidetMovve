@@ -35,13 +35,7 @@ extension CatalogViewController: UITableViewDataSource {
             //cell.testLabel.text = tvShows.first?.name
             return cell
         default:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.actorsCellID,
-                                                           for: indexPath) as? ActorsListTableViewCell else {
-                return UITableViewCell()
-            }
-            ///example for filling collection
-            cell.testLabel.text = tvShows.first?.idString
-            return cell
+            return UITableViewCell()
         }
     }
 }
@@ -78,7 +72,7 @@ class CatalogViewController: UIViewController {
     let allCells = [
         FilmsTableViewCell(),
         SerialsTableViewCell(),
-        ActorsListTableViewCell()
+//        ActorsListTableViewCell()
     ]
 
     var tvShows: [TvShowModel] = []
@@ -90,9 +84,8 @@ class CatalogViewController: UIViewController {
         catalogTableView.delegate = self
         catalogTableView.dataSource = self
         registerCells()
-      
-//        getMovies()
-//        getTvShow()
+        navigationItem.title = "ItakSoidetMovve"
+       
     }
     
     private func registerCells() {
@@ -100,15 +93,9 @@ class CatalogViewController: UIViewController {
                                   forCellReuseIdentifier: Constants.filmsCellID)
         catalogTableView.register(UINib(nibName: Constants.serialsNibName, bundle: nil),
                                   forCellReuseIdentifier: Constants.serialsCellID)
-        catalogTableView.register(UINib(nibName: Constants.actorsNibName, bundle: nil),
-                                  forCellReuseIdentifier: Constants.actorsCellID)
+//        catalogTableView.register(UINib(nibName: Constants.actorsNibName, bundle: nil),
+//                                  forCellReuseIdentifier: Constants.actorsCellID)
     }
-     
-//    private func getMovies() {
-//        networkManager.getDiscoverMovies { movies in
-//            self.movies = [movies]
-//        }
-//    }
 
     func loadMovies(completion: @escaping(() -> ())) {
         networkManager.getDiscoverMovies(completion: { movies in
@@ -117,10 +104,4 @@ class CatalogViewController: UIViewController {
             completion()
         })
     }
-    
-//    private func getTvShow() {
-//        networkManager.getDiscoverTV { tv in
-//            self.tvShows = [tv]
-//        }
-//    }
 }
