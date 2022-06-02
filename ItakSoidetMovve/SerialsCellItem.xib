@@ -11,26 +11,26 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="iN0-l3-epB" customClass="SerialsCellItem" customModule="ItakSoidetMovve">
-            <rect key="frame" x="0.0" y="0.0" width="240" height="272"/>
+            <rect key="frame" x="0.0" y="0.0" width="240" height="298"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VEk-AR-sst">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="272"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VEk-AR-sst">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="298"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NrO-qT-gKN">
-                            <rect key="frame" x="8" y="8" width="140" height="248.5"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NrO-qT-gKN">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="298"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IHr-w4-Rjn">
                                     <rect key="frame" x="0.0" y="0.0" width="140" height="220"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="140" id="CgU-7v-q1R"/>
-                                        <constraint firstAttribute="height" constant="220" id="NNR-Aw-PGQ"/>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="lia-eq-N0q"/>
-                                    </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CzO-oQ-vsc">
-                                    <rect key="frame" x="0.0" y="228" width="41.5" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <rect key="frame" x="0.0" y="228" width="33" height="46"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcb-e0-liJ">
+                                    <rect key="frame" x="0.0" y="282" width="33" height="16"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -38,17 +38,30 @@
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="NrO-qT-gKN" firstAttribute="leading" secondItem="VEk-AR-sst" secondAttribute="leading" id="FAB-Ea-Z8o"/>
+                        <constraint firstAttribute="trailing" secondItem="NrO-qT-gKN" secondAttribute="trailing" id="UXN-xM-Q21"/>
+                        <constraint firstAttribute="bottom" secondItem="NrO-qT-gKN" secondAttribute="bottom" id="ctU-uP-4TM"/>
+                        <constraint firstItem="NrO-qT-gKN" firstAttribute="top" secondItem="VEk-AR-sst" secondAttribute="top" id="eTG-8l-iRh"/>
+                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="VEk-AR-sst" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Zyh-LT-YQn"/>
+                <constraint firstItem="VEk-AR-sst" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bJn-7d-7Ge"/>
+                <constraint firstItem="VEk-AR-sst" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="qaZ-Ag-aPL"/>
+                <constraint firstItem="VEk-AR-sst" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="rrn-XQ-vA9"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="cellImageView" destination="IHr-w4-Rjn" id="eOj-Ci-2SJ"/>
                 <outlet property="containerView" destination="VEk-AR-sst" id="BcA-JD-Wsq"/>
+                <outlet property="dateLabel" destination="bcb-e0-liJ" id="Jus-SG-hz9"/>
                 <outlet property="titleLabel" destination="CzO-oQ-vsc" id="qVI-iv-cFX"/>
             </connections>
-            <point key="canvasLocation" x="11.594202898550726" y="-84.375"/>
+            <point key="canvasLocation" x="42.028985507246382" y="-36.160714285714285"/>
         </view>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
     </objects>

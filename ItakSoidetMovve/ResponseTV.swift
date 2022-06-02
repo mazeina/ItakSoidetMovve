@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct ResponseTV: Codable {
     let page: Int
@@ -15,8 +16,12 @@ struct ResponseTV: Codable {
         var id: Int
         var name: String
         var poster_path: String
+        var first_air_date: String
         var posterPath: String {
             poster_path
+        }
+        var firstAirDate: String {
+            first_air_date
         }
     }
 }

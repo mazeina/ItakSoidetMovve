@@ -20,7 +20,7 @@ class SerialsTableViewCell: UITableViewCell {
         serialsViewCollection.dataSource = self
         serialsViewCollection.delegate = self
         setupCollectionViewUI()
-        loadMovies {
+        loadSerials {
             DispatchQueue.main.async {
                 self.serialsViewCollection.reloadData()
             }
@@ -33,7 +33,7 @@ class SerialsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func loadMovies(completion: @escaping(() -> ())) {
+    func loadSerials(completion: @escaping(() -> ())) {
         networkManager.getDiscoverTV(completion: { serials in
 
             self.serials = serials
@@ -65,7 +65,7 @@ extension SerialsTableViewCell: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
 
-        cell.configureWith(movieName: currentTV?.name, profilePath: currentTV?.posterPath)
+        cell.configureWith(movieName: currentTV?.name, profilePath: currentTV?.posterPath, date: currentTV?.firstAirDate)
 
         return cell
     }
@@ -73,7 +73,7 @@ extension SerialsTableViewCell: UICollectionViewDataSource {
 extension SerialsTableViewCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150, height: 250)
+        return CGSize(width: 135, height: 270)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
