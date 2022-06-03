@@ -14,14 +14,18 @@ struct ResponseMovies: Codable {
     struct Movie: Codable {
         let id: Int
         let title: String
-        let release_date: String
-        let poster_path: String
-        
-        var releaseDate: String {
-            release_date
-        }
-        var posterPath: String {
-            poster_path
+        let releaseDate: String
+        let posterPath: String
+        let overview: String
+        var voteAverage: Double
+
+        enum CodingKeys: String, CodingKey {
+            case id
+            case title
+            case releaseDate = "release_date"
+            case posterPath = "poster_path"
+            case overview
+            case voteAverage = "vote_average"
         }
     }
 }

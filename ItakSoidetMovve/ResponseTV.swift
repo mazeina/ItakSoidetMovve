@@ -8,6 +8,24 @@
 import Foundation
 import UIKit
 
+//struct ResponseTV: Codable {
+//    let page: Int
+//    let results: [TV]
+//
+//    struct TV: Codable {
+//        var id: Int
+//        var name: String
+//        var poster_path: String
+//        var first_air_date: String
+//        var posterPath: String {
+//            poster_path
+//        }
+//        var firstAirDate: String {
+//            first_air_date
+//        }
+//    }
+//}
+
 struct ResponseTV: Codable {
     let page: Int
     let results: [TV]
@@ -15,13 +33,18 @@ struct ResponseTV: Codable {
     struct TV: Codable {
         var id: Int
         var name: String
-        var poster_path: String
-        var first_air_date: String
-        var posterPath: String {
-            poster_path
-        }
-        var firstAirDate: String {
-            first_air_date
+        var posterPath: String
+        var firstAirDate: String
+        var overview: String
+        var voteAverage: Float
+        
+        enum CodingKeys: String, CodingKey {
+            case id
+            case name
+            case posterPath = "poster_path"
+            case firstAirDate = "first_air_date"
+            case overview
+            case voteAverage = "vote_average"
         }
     }
 }
