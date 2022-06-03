@@ -21,7 +21,7 @@ class DetailMoviesViewController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var actorsCollectionView: UICollectionView!
     @IBOutlet weak var detailMoviesViewOutlet: UIView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadMovies()
@@ -33,10 +33,15 @@ class DetailMoviesViewController: UIViewController {
     }
     
     @IBAction func goToWebVersion(_ sender: UIButton) {
-        if let url = URL(string: "\(Constants.NetWork.baseUrl)/tv/\(Constants.NetWork.creditsIdTV)/credits?api_key=\(Constants.apiKey)&language=ru"                ) {
-            UIApplication.shared.open(url)
+        if Constants.movieToTVSwitcher == true {
+            if let url = URL(string: "https://www.themoviedb.org/movie/\(movies?.results[Constants.indexOfMovie].id ?? 0)") {
+                UIApplication.shared.open(url)
+            }
+        } else {
+            if let url = URL(string: "https://www.themoviedb.org/tv/\((tvShows?.results[Constants.indexOfMovie].id ?? 0))") {
+                UIApplication.shared.open(url)
+            }
         }
-        
     }
     
     @IBAction func addToWatchLaterButtonPressed(_ sender: UIBarButtonItem) {
@@ -77,7 +82,5 @@ class DetailMoviesViewController: UIViewController {
             posterImageView.image = UIImage(data: dataTV ?? Data())
             descriptionTextView.text = resultTV?.overview
         }
-        
-        
     }
 }

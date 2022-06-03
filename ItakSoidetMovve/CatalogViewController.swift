@@ -109,7 +109,7 @@ class CatalogViewController: UIViewController {
         Constants.indexOfMovie = indexPath.row
 
         let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailMoviesViewController")
-        //detailsVC.modalPresentationStyle = .fullScreen
+        detailsVC.modalPresentationStyle = .fullScreen
         UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController?.present(detailsVC, animated: true, completion: nil)
     }
     
@@ -120,7 +120,7 @@ class CatalogViewController: UIViewController {
 
         //Сам переход
         let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailMoviesViewController")
-        //detailsVC.modalPresentationStyle = .fullScreen
+        detailsVC.modalPresentationStyle = .fullScreen
         UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController?.present(detailsVC, animated: true, completion: nil)
        
     }
