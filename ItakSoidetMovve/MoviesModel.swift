@@ -20,8 +20,8 @@ struct MoviesModel {
     init?(movies: ResponseMovies) {
         id = movies.results.first?.id ?? 0 
         title = movies.results.first?.title ?? "nil title"
-        releaseDate = movies.results.first?.release_date ?? "nil releaseDate" 
-        posterPath = movies.results.first?.poster_path ?? "nil posterPath"
+        releaseDate = movies.results.first?.releaseDate ?? "nil releaseDate"
+        posterPath = movies.results.first?.posterPath ?? "nil posterPath"
     }
 }
 

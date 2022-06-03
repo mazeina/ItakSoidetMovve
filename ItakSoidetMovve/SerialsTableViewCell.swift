@@ -9,10 +9,11 @@ import UIKit
 
 class SerialsTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var serialsViewCollection: UICollectionView!
-    
+    lazy var catalogVC: CatalogViewController = CatalogViewController()
     var serials: ResponseTV? = nil
     let networkManager = NetworkManager()
+    
+    @IBOutlet weak var serialsViewCollection: UICollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -78,5 +79,9 @@ extension SerialsTableViewCell: UICollectionViewDelegate, UICollectionViewDelega
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        catalogVC.pushTVDetailController(with: indexPath)
     }
 }

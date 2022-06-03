@@ -10,6 +10,7 @@ import Foundation
 class NetworkManager {
     
 // MARK: - Movies
+    static let shared: NetworkManager = NetworkManager()
    
     func getDiscoverMovies(completion: @escaping((ResponseMovies) -> ())) {
         if let url = URL(string: Constants.NetWork.fullUrlMovies) {

@@ -102,4 +102,26 @@ class CatalogViewController: UIViewController {
             completion()
         })
     }
+    
+    func pushMovieDetailController(with indexPath: IndexPath) {
+        //Передает значение для выбора фильм/сериал
+        Constants.movieToTVSwitcher = true
+        Constants.indexOfMovie = indexPath.row
+
+        let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailMoviesViewController")
+        //detailsVC.modalPresentationStyle = .fullScreen
+        UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController?.present(detailsVC, animated: true, completion: nil)
+    }
+    
+    func pushTVDetailController(with indexPath: IndexPath) {
+        //Передает значение для выбора фильм/сериал
+        Constants.movieToTVSwitcher = false
+        Constants.indexOfMovie = indexPath.row
+
+        //Сам переход
+        let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailMoviesViewController")
+        //detailsVC.modalPresentationStyle = .fullScreen
+        UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController?.present(detailsVC, animated: true, completion: nil)
+       
+    }
 }

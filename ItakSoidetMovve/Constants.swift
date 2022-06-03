@@ -21,6 +21,12 @@ struct Constants {
     static let serialCollectionCell = "SerialsCellItem"
     static let serialCollectionCellID = "SerialsCellItem"
     static let actorsCollectionViewCellID = "ActorsCollectionView"
+    static let detailMovieSegue = "detailMovieSegue"
+    
+    //Костыли
+    static var indexOfMovie: Int = 0
+    static var movieToTVSwitcher: Bool = true
+    
     
     struct Colors {
         static let darkGray = "backgroundColor"
@@ -33,10 +39,12 @@ struct Constants {
         static let baseUrl = "https://api.themoviedb.org/3/"
         static let discoverMovies = "discover/movie"
         static let discoverTV = "discover/tv"
+        static var creditsIdMovie = "0"
+        static var creditsIdTV = "0"
         static var fullUrlMovies = "\(baseUrl)\(discoverMovies)?api_key=\(Constants.apiKey)&language=ru"
         static var fullUrlTV = "\(baseUrl)\(discoverTV)?api_key=\(Constants.apiKey)&language=ru"
-        static var fullUrlCreditsMovie = "\(baseUrl)/movie/157336/credits?api_key=\(Constants.apiKey)&language=ru"
-        static var fullUrlCreditsTV = "\(baseUrl)/tv/66732/credits?api_key=\(Constants.apiKey)&language=ru"
+        static var fullUrlCreditsMovie = "\(baseUrl)/movie/\(creditsIdMovie)/credits?api_key=\(Constants.apiKey)&language=ru"
+        static var fullUrlCreditsTV = "\(baseUrl)/tv/\(creditsIdTV)/credits?api_key=\(Constants.apiKey)&language=ru"
         
         //https://api.themoviedb.org/3/discover/tv?api_key=32ea20e318793cf10469df41ffe5990d&language=ru
         static let defaultImagePath = "https://image.tmdb.org/t/p/original"

@@ -56,7 +56,7 @@ extension FilmsTableViewCell: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
 
-        cell.configureWith(movieName: currentMovie?.title, profilePath:                 currentMovie?.poster_path, releaseDate: currentMovie?.release_date)
+        cell.configureWith(movieName: currentMovie?.title, profilePath: currentMovie?.posterPath, releaseDate: currentMovie?.releaseDate)
 
         return cell
     }
@@ -69,5 +69,9 @@ extension FilmsTableViewCell: UICollectionViewDelegate, UICollectionViewDelegate
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        catalogVC.pushMovieDetailController(with: indexPath)
     }
 }

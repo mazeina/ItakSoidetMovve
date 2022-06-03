@@ -19,7 +19,7 @@ struct TvShowModel {
     init?(tvShow: ResponseTV) {
         id = tvShow.results.first?.id ?? 0
         name = tvShow.results.first?.name ?? "nil name"
-        posterPath = tvShow.results.first?.poster_path ?? "nil posterPath"
+        posterPath = tvShow.results.first?.posterPath ?? "nil posterPath"
     }
 }
  
