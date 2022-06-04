@@ -14,11 +14,11 @@ struct CreditsMovieModel {
     var actorImage: String
     var character: String
     
-    init?(tvCredits: ResponseCreditsMovie) {
-        actorId = tvCredits.cast.first?.actorId ?? 0
-        actorName = tvCredits.cast.first?.actorName ?? "nill name"
-        actorImage = tvCredits.cast.first?.actorImage ?? "nill actor image"
-        character = tvCredits.cast.first?.character ?? "nill character"
-    
-    }
+//    init?(tvCredits: ResponseCreditsMovie) {
+//        actorId = tvCredits.cast.first?.actorId ?? 0
+//        actorName = tvCredits.cast.first?.actorName ?? "nill name"
+//        actorImage = tvCredits.cast.first?.actorImage ?? "nill actor image"
+//        character = tvCredits.cast.first?.character ?? "nill character"
+//
+//    }
 }

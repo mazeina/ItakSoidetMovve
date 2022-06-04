@@ -7,23 +7,47 @@
 
 import UIKit
 
-class ActorsListTableViewCell: UITableViewCell {
-    
+class ActorsListTableViewCell: UICollectionViewCell {
+
+    @IBOutlet weak var imageLabel: UIImageView!
+    @IBOutlet weak var name1: UILabel!
+    @IBOutlet weak var name2: UILabel!
     /**
      need collectionView
      */
     
-    @IBOutlet weak var testLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+        self.setupCell()
+
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        //self.imageLabel.layer.cornerRadius = 2
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    func configureWith(actor: ResponseCreditsMovie.Cast) {
+        self.name1.text = actor.name
+        self.name2.text = actor.character
+        self.loadImage(profilePath: actor.profile_path)
+        self.setupCell()
+    }
+    private func setupCell() {
+        self.imageLabel.contentMode = .scaleToFill
+        name1.textColor = .systemGray
+        name1.font = .boldSystemFont(ofSize: 13)
+        name2.textColor = .systemGray
+    }
 
-        // Configure the view for the selected state
+    private func loadImage(profilePath: String?) {
+
+        guard let profilePath = profilePath else {
+            return
+        }
+        let imageURL = URL(string: Constants.NetWork.defaultImagePath + profilePath)
+        self.imageLabel.sd_setImage(with: imageURL, completed: nil)
     }
     
 }

@@ -13,16 +13,20 @@ struct ResponseCreditsTV: Codable {
     let cast: [Cast]
     
     struct Cast: Codable {
-        var actorId: Int
-        var actorName: String
-        var actorImage: String
+        var id: Int
+        var name: String
         var character: String
-        
-        enum CodingKeys: String, CodingKey {
-            case actorId = "id"
-            case actorName = "name"
-            case actorImage = "profile_path"
-            case character
-        }
+        var profile_path: String = "/zwa0p3OSxmT5gLFRcKvM0n3rXx0.jpg"
+//        var actorId: Int
+//        var actorName: String
+//        var actorImage: String
+//        var character: String
+//
+//        enum CodingKeys: String, CodingKey {
+//            case actorId = "id"
+//            case actorName = "name"
+//            case actorImage = "profile_path"
+//            case character
+//        }
     }
 }

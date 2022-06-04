@@ -27,12 +27,25 @@ class DetailMoviesViewController: UIViewController {
         super.viewDidLoad()
         loadMovies()
         loadTVShows()
+        loadActorsMovies() {
+            print("sdfsdfs")
+            DispatchQueue.main.async {
+                self.actorsCollectionView.reloadData()
+            }
+        }
         
         var settings = CosmosSettings()
         settings.fillMode = .half
         settings.totalStars = 10
         ratingStar.settings = settings
-    }
+        
+        self.actorsCollectionView.dataSource = self
+        self.actorsCollectionView.delegate = self
+        
+        self.actorsCollectionView.register(UINib(nibName: "ActorsListTableViewCell", bundle: nil), forCellWithReuseIdentifier: "ActorsListTableViewCell")
+        self.actorsCollectionView.reloadData()
+        
+ }
     
     override func viewWillAppear(_ animated: Bool) {
         fillupViewWithData()
@@ -66,6 +79,19 @@ class DetailMoviesViewController: UIViewController {
         }
     }
     
+    func loadActorsMovies(completion: @escaping(() -> ())) {
+        if Constants.movieToTVSwitcher == true {
+            NetworkManager.shared.getDiscoverCreditsMovie { actors in
+                self.actorsArray = actors.cast
+            }
+        } else {
+            NetworkManager.shared.getDiscoverCreditsMovie { actors in
+                self.actorsArray = actors.cast
+            }
+        }
+        completion()
+    }
+    
     func fillupViewWithData() {
         let indx = Constants.indexOfMovie
         let resultsMovies = movies?.results[indx]
@@ -93,4 +119,23 @@ class DetailMoviesViewController: UIViewController {
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
     }
+}
+
+extension DetailMoviesViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        actorsArray?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActorsListTableViewCell", for: indexPath) as! ActorsListTableViewCell
+        
+        let actor =  actorsArray![indexPath.item]
+        cell.configureWith(actor: actor)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 50, height: 70)
+    }
+
 }

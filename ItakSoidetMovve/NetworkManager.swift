@@ -80,16 +80,18 @@ class NetworkManager {
     // MARK: - Movie Actors
 
     func getDiscoverCreditsMovie(completion: @escaping((ResponseCreditsMovie) -> ())) {
+        print(Constants.NetWork.fullUrlCreditsMovie)
         if let url = URL(string: Constants.NetWork.fullUrlCreditsMovie) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
                 if error != nil {
-                    print("error")
+                    print("error getDiscoverCreditsMovie")
                     return
                 }
 
                 if let safeData = data {
                     if let creditsMovie = self.parseJSONCreditsMovie(safeData) {
+                        print("creditsMovie \(creditsMovie)")
                         completion(creditsMovie)
                     }
                 }
@@ -99,12 +101,13 @@ class NetworkManager {
     }
 
     func parseJSONCreditsMovie(_ data: Data) -> ResponseCreditsMovie? {
+        print("data-----------")
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(ResponseCreditsMovie.self, from: data)
             return decodedData
         } catch {
-            print("error")
+            print("error parseJSONCreditsMovie")
             return nil
         }
     }
@@ -116,12 +119,13 @@ class NetworkManager {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
                 if error != nil {
-                    print("error")
+                    print("error getDiscoverCreditsMovie")
                     return
                 }
 
                 if let safeData = data {
                     if let creditsTV = self.parseJSONCreditsTV(safeData) {
+                        print("creditsTV \(creditsTV)")
                         completion(creditsTV)
                     }
                 }
@@ -136,7 +140,7 @@ class NetworkManager {
             let decodedData = try decoder.decode(ResponseCreditsTV.self, from: data)
             return decodedData
         } catch {
-            print("error")
+            print("error parseJSONCreditsTV")
             return nil
         }
     }
