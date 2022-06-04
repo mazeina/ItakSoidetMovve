@@ -36,7 +36,7 @@ struct ResponseTV: Codable {
         var posterPath: String
         var firstAirDate: String
         var overview: String
-        var voteAverage: Float
+        var voteAverage: Double
         
         enum CodingKeys: String, CodingKey {
             case id

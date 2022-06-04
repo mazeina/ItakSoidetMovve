@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Cosmos
 
 class DetailMoviesViewController: UIViewController {
     
@@ -17,15 +18,20 @@ class DetailMoviesViewController: UIViewController {
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var releaseDateLabel: UILabel!
-    @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var actorsCollectionView: UICollectionView!
     @IBOutlet weak var detailMoviesViewOutlet: UIView!
+    @IBOutlet weak var ratingStar: CosmosView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadMovies()
         loadTVShows()
+        
+        var settings = CosmosSettings()
+        settings.fillMode = .half
+        settings.totalStars = 10
+        ratingStar.settings = settings
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,15 +78,15 @@ class DetailMoviesViewController: UIViewController {
         if Constants.movieToTVSwitcher == true {
             nameLabel.text = resultsMovies?.title
             releaseDateLabel.text = "Дата выхода: \(resultsMovies?.releaseDate ?? "0.0")"
-            ratingLabel.text = "Рейтинг \(resultsMovies?.voteAverage ?? 0.0)/10"
             posterImageView.image = UIImage(data: dataMovies ?? Data())
             descriptionTextView.text = resultsMovies?.overview
+            ratingStar.rating = resultsMovies?.voteAverage ?? 0.0
         } else if Constants.movieToTVSwitcher == false {
             nameLabel.text = resultTV?.name
             releaseDateLabel.text = "Дата выхода: \(resultTV?.firstAirDate ?? "nil")"
-            ratingLabel.text = "Рейтинг \(resultTV?.voteAverage ?? 0.0 )/10"
             posterImageView.image = UIImage(data: dataTV ?? Data())
             descriptionTextView.text = resultTV?.overview
+            ratingStar.rating = resultTV?.voteAverage ?? 0.0
         }
     }
 }
