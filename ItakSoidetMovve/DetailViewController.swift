@@ -89,4 +89,8 @@ class DetailMoviesViewController: UIViewController {
             ratingStar.rating = resultTV?.voteAverage ?? 0.0
         }
     }
+    @IBAction func dismissButtonPresed(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
+    }
 }
