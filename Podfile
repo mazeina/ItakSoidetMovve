@@ -7,5 +7,5 @@ target 'ItakSoidetMovve' do
 
   # Pods for ItakSoidetMovve
 	pod 'SDWebImage'
-
+  pod 'Cosmos'
 end

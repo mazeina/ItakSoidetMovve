@@ -174,16 +174,7 @@
                                     <constraint firstAttribute="height" constant="476" id="kXA-dh-ll3"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Рейтинг: 9/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bF-fb-ieZ">
-                                <rect key="frame" x="20" y="581" width="374" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="E1H-rQ-bAI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" systemColor="systemYellowColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TiH-VW-GkI">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TiH-VW-GkI">
                                 <rect key="frame" x="20" y="725" width="374" height="82"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -206,7 +197,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIw-Rr-OwX">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIw-Rr-OwX">
                                 <rect key="frame" x="132" y="822" width="150" height="38"/>
                                 <color key="backgroundColor" name="buttonAndTabBarColor"/>
                                 <constraints>
@@ -223,8 +214,8 @@
                                     <action selector="goToWebVersion:" destination="fNc-Bd-wQD" eventType="touchUpInside" id="VMg-Xy-Wds"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата выпуска фильма/сериала" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bfx-30-VKa">
-                                <rect key="frame" x="20" y="557" width="374" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Дата выпуска фильма/сериала" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bfx-30-VKa">
+                                <rect key="frame" x="20" y="519" width="374" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="2MM-QS-OCr"/>
                                 </constraints>
@@ -232,7 +223,7 @@
                                 <color key="textColor" name="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1G-cP-qZD">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1G-cP-qZD">
                                 <rect key="frame" x="20" y="605" width="374" height="120"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -242,8 +233,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of film/tvShow" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRR-ax-Bv5">
-                                <rect key="frame" x="20" y="482" width="374" height="75"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name of film/tvShow" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRR-ax-Bv5">
+                                <rect key="frame" x="20" y="451" width="374" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="SXs-hJ-Krb"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="dVE-NO-0Fd"/>
@@ -252,6 +243,11 @@
                                 <color key="textColor" name="topicColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xrv-oA-UHz" customClass="CosmosView" customModule="Cosmos">
+                                <rect key="frame" x="87" y="551" width="240" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="backgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pJx-kD-iwU"/>
                         <color key="backgroundColor" name="backgroundColor"/>
@@ -261,10 +257,8 @@
                             <constraint firstItem="CHE-yg-u0K" firstAttribute="trailing" secondItem="pJx-kD-iwU" secondAttribute="trailing" id="B5j-vv-EZK"/>
                             <constraint firstItem="pJx-kD-iwU" firstAttribute="trailing" secondItem="vRR-ax-Bv5" secondAttribute="trailing" constant="20" id="E1Z-Z3-AGF"/>
                             <constraint firstItem="Bfx-30-VKa" firstAttribute="leading" secondItem="pJx-kD-iwU" secondAttribute="leading" constant="20" id="Fa4-BD-a1y"/>
-                            <constraint firstItem="5bF-fb-ieZ" firstAttribute="leading" secondItem="pJx-kD-iwU" secondAttribute="leading" constant="20" id="Hh1-Bg-0Me"/>
                             <constraint firstItem="CHE-yg-u0K" firstAttribute="leading" secondItem="pJx-kD-iwU" secondAttribute="leading" id="J3p-dE-zgm"/>
                             <constraint firstItem="vRR-ax-Bv5" firstAttribute="top" secondItem="CHE-yg-u0K" secondAttribute="bottom" constant="6" id="Ldf-ay-S3o"/>
-                            <constraint firstItem="5bF-fb-ieZ" firstAttribute="top" secondItem="Bfx-30-VKa" secondAttribute="bottom" id="NcI-ih-7MP"/>
                             <constraint firstItem="zIw-Rr-OwX" firstAttribute="centerX" secondItem="79A-WX-oQt" secondAttribute="centerX" id="Q35-5F-pVz"/>
                             <constraint firstItem="TiH-VW-GkI" firstAttribute="leading" secondItem="pJx-kD-iwU" secondAttribute="leading" constant="20" id="T1i-Gz-Vhp"/>
                             <constraint firstItem="pJx-kD-iwU" firstAttribute="trailing" secondItem="Bfx-30-VKa" secondAttribute="trailing" constant="20" id="TFa-0j-pND"/>
@@ -272,9 +266,7 @@
                             <constraint firstItem="B1G-cP-qZD" firstAttribute="leading" secondItem="pJx-kD-iwU" secondAttribute="leading" constant="20" id="Xxn-Bm-yLS"/>
                             <constraint firstItem="CHE-yg-u0K" firstAttribute="top" secondItem="79A-WX-oQt" secondAttribute="top" id="a4p-f8-lqQ"/>
                             <constraint firstItem="vRR-ax-Bv5" firstAttribute="leading" secondItem="pJx-kD-iwU" secondAttribute="leading" constant="20" id="bkB-6V-tGJ"/>
-                            <constraint firstItem="B1G-cP-qZD" firstAttribute="top" secondItem="5bF-fb-ieZ" secondAttribute="bottom" id="i6Q-a3-FhP"/>
                             <constraint firstItem="pJx-kD-iwU" firstAttribute="trailing" secondItem="B1G-cP-qZD" secondAttribute="trailing" constant="20" id="iqx-aK-PJj"/>
-                            <constraint firstItem="pJx-kD-iwU" firstAttribute="trailing" secondItem="5bF-fb-ieZ" secondAttribute="trailing" constant="20" id="qTI-YI-pTg"/>
                             <constraint firstItem="zIw-Rr-OwX" firstAttribute="top" secondItem="TiH-VW-GkI" secondAttribute="bottom" constant="15" id="xeT-w2-uCh"/>
                         </constraints>
                     </view>
@@ -292,13 +284,13 @@
                         <outlet property="detailMoviesViewOutlet" destination="79A-WX-oQt" id="zfj-YD-7UQ"/>
                         <outlet property="nameLabel" destination="vRR-ax-Bv5" id="rsb-yZ-Jp2"/>
                         <outlet property="posterImageView" destination="CHE-yg-u0K" id="cZb-Ik-8OA"/>
-                        <outlet property="ratingLabel" destination="5bF-fb-ieZ" id="YbZ-I4-AYv"/>
+                        <outlet property="ratingStar" destination="Xrv-oA-UHz" id="5va-lq-pkz"/>
                         <outlet property="releaseDateLabel" destination="Bfx-30-VKa" id="9Eu-Ov-KKp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Az2-oD-qHA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3354" y="-321"/>
+            <point key="canvasLocation" x="3353.6231884057975" y="-321.42857142857139"/>
         </scene>
     </scenes>
     <resources>
@@ -321,9 +313,6 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
