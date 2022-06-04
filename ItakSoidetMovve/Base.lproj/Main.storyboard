@@ -243,14 +243,14 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIZ-fr-YZL">
-                                <rect key="frame" x="346" y="44" width="48" height="38"/>
+                                <rect key="frame" x="342" y="44" width="52" height="38"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="bookmarkIcon"/>
+                                <buttonConfiguration key="configuration" style="plain" image="bookmarkIcon" title=" "/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MgK-Ne-cK1">
-                                <rect key="frame" x="20" y="44" width="48" height="38"/>
+                                <rect key="frame" x="20" y="44" width="52" height="38"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="backIcon"/>
+                                <buttonConfiguration key="configuration" style="plain" image="backIcon" title=" "/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pJx-kD-iwU"/>
