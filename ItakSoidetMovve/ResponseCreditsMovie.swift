@@ -17,6 +17,7 @@ struct ResponseCreditsMovie: Codable {
         var name: String
         var character: String
         var profile_path: String = "/zwa0p3OSxmT5gLFRcKvM0n3rXx0.jpg"
+        //
 //        var actorId: Int
 //        var actorName: String
 //        var actorImage: String
